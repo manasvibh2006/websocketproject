@@ -3,7 +3,7 @@
 
 :root {
   --primary-color: #144955; /* Blue accent */
-  --secondary-color: #000000; /* Yellow accent */
+  --secondary-color:rgb(0, 0, 0); /* Yellow accent */
   --bg-dark: #1c9094; /* Light gray background */
   --bg-light: #a3c4c3; /* Even lighter gray for content sections */
   --text-light: #333; /* Dark text */
