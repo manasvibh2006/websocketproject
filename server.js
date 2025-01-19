@@ -46,14 +46,12 @@ io.on("connection", (socket) => {
     // Listen for chatMessage
     socket.on('chatMessage', (msg) => {
         const user = getCurrentUser(socket.id);
-        if (user) {
-            const message = formatMessage(user.username, msg);
+        const message = formatMessage(user.username, msg);
 
-            // Save message to chat history
-            chatHistory[user.room].push(message);
+        // Save message to chat history
+        chatHistory[user.room].push(message);
 
-            io.to(user.room).emit('message', message);
-        }
+        io.to(user.room).emit('message', message);
     });
 
     // Runs when a client disconnects
@@ -75,3 +73,6 @@ io.on("connection", (socket) => {
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
+
